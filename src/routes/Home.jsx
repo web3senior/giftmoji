@@ -2,9 +2,14 @@ import { useState, useEffect } from 'react'
 import { useParams, useSearchParams } from 'react-router'
 import { web3, contract, useAuth, _, provider } from './../contexts/AuthContext'
 import party from 'party-js'
+import ABI from './../abi/giftmoji.json'
 import toast, { Toaster } from 'react-hot-toast'
+import Web3 from 'web3'
 import Hero from './../assets/hero.svg'
 import styles from './Home.module.scss'
+
+ const web3ReadOnly = new Web3(import.meta.env.VITE_LUKSO_PROVIDER)
+ const contractReadOnly = new web3ReadOnly.eth.Contract(ABI, import.meta.env.VITE_CONTRACT)
 
 function Home() {
   const [emoji, setEmoji] = useState([])
@@ -13,9 +18,9 @@ function Home() {
   let [searchParams] = useSearchParams()
   const auth = useAuth()
 
-  const getAllEmoji = async () => await contract.methods.getAllEmoji().call()
+  const getAllEmoji = async () => await contractReadOnly.methods.getAllEmoji().call()
 
-  const getAllUserReaction = async () => await contract.methods.getAllUserReaction(`${auth.contextAccounts[0]}`).call()
+  const getAllUserReaction = async () => await contractReadOnly.methods.getAllUserReaction(`${auth.contextAccounts[0]}`).call()
 
 
   const action = async (e, emoji) => {
