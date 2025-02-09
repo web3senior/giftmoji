@@ -3,7 +3,6 @@ import { useParams, useSearchParams } from "react-router";
 import { web3, contract, useAuth, _, provider } from './../contexts/AuthContext'
 import party from 'party-js'
 import toast, { Toaster } from 'react-hot-toast'
-import toast from 'react-hot-toast'
 import Hero from './../assets/hero.svg'
 import styles from './Home.module.scss'
 
