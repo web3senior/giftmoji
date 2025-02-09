@@ -125,7 +125,6 @@ export function AuthProvider({ children }) {
   }, [])
 
   useEffect(() => {
-
     async function init() {
       try {
         const _accounts = provider.accounts

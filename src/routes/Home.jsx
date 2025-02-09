@@ -17,33 +17,34 @@ function Home() {
 
   const getAllUserReaction = async () => await contract.methods.getAllUserReaction(`${auth.contextAccounts[0]}`).call()
 
+
   const action = async (e, emoji) => {
     const t = toast.loading(`Waiting for transaction's confirmation`)
 
     const message = prompt(`Please enter a message:`)
 
     try {
-      // window.lukso.request({ method: 'eth_requestAccounts' }).then((accounts) => {
+       window.lukso.request({ method: 'eth_requestAccounts' }).then((accounts) => {
       contract.methods
         .react(`${auth.contextAccounts[0]}`, emoji.emojiId, _.toHex(message))
         .send({
-          from: auth.accounts[0],
+          from: accounts[0],
           value: emoji.price,
         })
         .then((res) => {
           console.log(res)
 
+          toast.success(`Done`)
+          toast.dismiss(t)
+
           party.confetti(document.body, {
             count: party.variation.range(20, 40),
           })
-
-          toast.success(`Done`)
-          toast.dismiss(t)
         })
         .catch((error) => {
           toast.dismiss(t)
         })
-      //  })
+     })
     } catch (error) {
       console.log(error)
       toast.dismiss(t)
