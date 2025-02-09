@@ -137,7 +137,7 @@ contract EmojiGift is Ownable(msg.sender), Pausable {
             require(success, "Failed to send Ether to the user!");
 
             // Send to the owner
-            (bool success2, ) = _addr.call{value: calcPercentage(msg.value, fee)}("");
+            (bool success2, ) = owner().call{value: calcPercentage(msg.value, fee)}("");
             require(success2, "Failed to send Ether to the owner!");
         }
 

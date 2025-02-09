@@ -6,7 +6,13 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "_fee",
+						"type": "uint8"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
@@ -85,6 +91,12 @@
 						"internalType": "uint256",
 						"name": "price",
 						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "status",
+						"type": "bool"
 					}
 				],
 				"name": "EmojiAdded",
@@ -126,9 +138,9 @@
 				"inputs": [
 					{
 						"indexed": false,
-						"internalType": "uint256",
+						"internalType": "uint8",
 						"name": "",
-						"type": "uint256"
+						"type": "uint8"
 					}
 				],
 				"name": "FeeUpdated",
@@ -245,35 +257,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "_addr",
-						"type": "address"
-					},
-					{
-						"internalType": "bytes32",
-						"name": "_emojiId",
-						"type": "bytes32"
-					},
-					{
-						"internalType": "bytes",
-						"name": "_message",
-						"type": "bytes"
-					}
-				],
-				"name": "action",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "string",
 						"name": "_metadata",
 						"type": "string"
@@ -339,6 +322,24 @@
 						"internalType": "uint256",
 						"name": "price",
 						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "status",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "fee",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
 					}
 				],
 				"stateMutability": "view",
@@ -374,6 +375,11 @@
 								"internalType": "uint256",
 								"name": "price",
 								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "status",
+								"type": "bool"
 							}
 						],
 						"internalType": "struct EmojiGift.EmojiStruct[]",
@@ -474,6 +480,35 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_addr",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_emojiId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_message",
+						"type": "bytes"
+					}
+				],
+				"name": "react",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -615,6 +650,11 @@
 						"internalType": "uint256",
 						"name": "_price",
 						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_status",
+						"type": "bool"
 					}
 				],
 				"name": "updateEmoji",
@@ -697,6 +737,12 @@
 				},
 				"transferOwnership(address)": {
 					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"updateFee(uint8)": {
+					"details": "Fee can be 0-100",
+					"params": {
+						"_fee": "new value"
+					}
 				}
 			},
 			"title": "Giftmoji",
@@ -705,14 +751,11 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {
-				"action(address,bytes32,bytes)": {
-					"notice": "Send emoji"
-				},
 				"getAllEmoji()": {
 					"notice": "Get all emojies"
 				},
 				"getAllUserReaction(address)": {
-					"notice": "Get all reactions"
+					"notice": "Get all user reactions"
 				},
 				"getBalance()": {
 					"notice": "Return the balance of this contract"
@@ -720,8 +763,11 @@
 				"pause()": {
 					"notice": "Pause mint"
 				},
+				"react(address,bytes32,bytes)": {
+					"notice": "Gift emoji"
+				},
 				"totalOfEmojiReaction(address,bytes32)": {
-					"notice": "Get all reactions"
+					"notice": "Get all reactions of a emoji"
 				},
 				"transferBalance(address,uint256)": {
 					"notice": "Transfer balance from this contract to input address"
@@ -797,11 +843,11 @@
 			]
 		},
 		"Giftmoji.sol": {
-			"keccak256": "0x73ec352b60742d74fbaf3a54e6d30d5fc5b68a3570631e805d34933eb1533378",
+			"keccak256": "0x07c1647953a4451eab7ae9f0df87054cf333be668dc2dd4a92c3771f5a9bd2a0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ee37ac0956fa05eb5a9a5955395824add47a7fae648251c5cb95ea583b8a4181",
-				"dweb:/ipfs/QmQMjxFrrznorkGF3gL86mhamMncyNQ8sRGTq5FvCJ1eAZ"
+				"bzz-raw://421f4befff6f44c1ee17d2e3697d5cd3746ca2187a6692a99d14f2ca94d43e16",
+				"dweb:/ipfs/QmUar9m86BnmcD3p4TgnyVtxKpKqBehj1HN2h3nnD3Uii1"
 			]
 		},
 		"_errors.sol": {
@@ -813,11 +859,11 @@
 			]
 		},
 		"_events.sol": {
-			"keccak256": "0xc8282bbb1a046165f512b42fd9cce5c4774392c7d838c525eee8148576622352",
+			"keccak256": "0x02de5465902474fb919a475b063fa42d0d8383a42ec884c95c1ee5641076c3f0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fd457937cdcbb69a5097800e8b6d7027f387d577085c52eb3d37dc2cfb5caecc",
-				"dweb:/ipfs/QmWfXGL1YQPsWUD6EKi5LPkUjyM9sYQ3ffpMGYN59uYmoK"
+				"bzz-raw://17dcb68131635d600259627251523e12193853345ba2a52945b27ed003af5a39",
+				"dweb:/ipfs/QmNWMBeD41W4vLgwFckV3NVbaKm8ExyBsRxGSEMcLYT2rx"
 			]
 		},
 		"_ownable.sol": {

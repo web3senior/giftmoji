@@ -7,7 +7,7 @@ import './styles/global.scss'
 
 
 import Home from './routes/Home.jsx'
-import Admin from './Admin.jsx'
+import Admin from './routes/Admin.jsx'
 
 const root = document.getElementById('root')
 

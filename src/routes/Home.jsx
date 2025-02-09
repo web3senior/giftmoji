@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useSearchParams } from "react-router";
 import { web3, contract, useAuth, _, provider } from './../contexts/AuthContext'
 import party from 'party-js'
+import toast, { Toaster } from 'react-hot-toast'
 import toast from 'react-hot-toast'
 import Hero from './../assets/hero.svg'
 import styles from './Home.module.scss'
@@ -77,6 +78,7 @@ function Home() {
 
   return (
     <div className={`${styles.page} __container`} data-width={`large`}>
+      <Toaster/>
       <header className={`${styles.header} d-flex flex-column align-items-center justify-content-between`}>
         <figure className={`ms-motion-slideDownIn`}>
           <img className={`Hero`} src={Hero} alt={`${import.meta.env.VITE_NAME}`} width={220} height={48} />
