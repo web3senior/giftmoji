@@ -87,6 +87,7 @@
       transform: scale(1.2);
       filter: brightness(100%);
     }
+
     span {
       position: absolute;
       right: 0;
@@ -95,12 +96,13 @@
       background-color: rgba(0, 0, 0, 0.5);
       padding: 0.01rem;
       border-radius: 999px;
-      border:2px solid var(--white);
+      border:1px solid var(--white);
+      font-size: 10px;
     }
-    
+
     img {
-      width: 48px;
-      height: 48px;
+      width: 32px;
+      height: 32px;
       cursor: pointer;
     }
   }
