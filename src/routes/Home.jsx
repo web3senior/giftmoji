@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams, useSearchParams } from "react-router";
+import { useParams, useSearchParams } from 'react-router'
 import { web3, contract, useAuth, _, provider } from './../contexts/AuthContext'
 import party from 'party-js'
 import toast, { Toaster } from 'react-hot-toast'
@@ -10,7 +10,7 @@ function Home() {
   const [emoji, setEmoji] = useState([])
   const [react, setReact] = useState([])
   const [profiles, setProfiles] = useState()
-  let [searchParams] = useSearchParams();
+  let [searchParams] = useSearchParams()
   const auth = useAuth()
 
   const getAllEmoji = async () => await contract.methods.getAllEmoji().call()
@@ -25,7 +25,7 @@ function Home() {
     try {
       // window.lukso.request({ method: 'eth_requestAccounts' }).then((accounts) => {
       contract.methods
-        .react(`${auth.contextAccounts[0]}`, emoji.emojiId, "0x")
+        .react(`${auth.contextAccounts[0]}`, emoji.emojiId, _.toHex(message))
         .send({
           from: auth.accounts[0],
           value: emoji.price,
@@ -77,7 +77,7 @@ function Home() {
 
   return (
     <div className={`${styles.page} __container`} data-width={`large`}>
-      <Toaster/>
+      <Toaster />
       <header className={`${styles.header} d-flex flex-column align-items-center justify-content-between`}>
         <figure className={`ms-motion-slideDownIn`}>
           <img className={`Hero`} src={Hero} alt={`${import.meta.env.VITE_NAME}`} width={220} height={48} />
@@ -102,7 +102,7 @@ function Home() {
             emoji.map((item, i) => {
               return (
                 <div key={i} className={`${styles.emoji} d-flex flex-column align-items-center justify-content-center card animate__animated animate__heartBeat`} title={item.name} onClick={(e) => action(e, item)}>
-                  <span className={`${styles.emoji__icon}`}> {item.emoji}</span>
+                  <span className={`${styles.emoji__icon}`}>{item.emoji}</span>
                   {/* <Image className={styles.emoji__icon} src={`/${item.emoji}.svg`} alt={`${import.meta.env.NEXT_PUBLIC_NAME}`} width={32} height={32} /> */}
                   <h3>{(react && react.length > 0 && react.filter((filterItem, i) => filterItem.emojiId === item.emojiId).length) || 0}</h3>
                   <small>{_.fromWei(item.price, `ether`)} ⏣LYX</small>
