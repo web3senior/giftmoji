@@ -66,7 +66,6 @@ function Home() {
       await Promise.all(
         res.map((response, i) => {
           return auth.fetchProfile(response.sender).then((profile) => {
-            console.log(`==============`, profile)
             responses_with_profile.push(Object.assign(profile, response))
           })
         })
@@ -115,9 +114,9 @@ function Home() {
         {profiles && profiles.length > 0 && (
           <div className={`${styles.profiles} d-flex align-items-center justify-content-center`}>
             {profiles.map((profile, i) => {
-              console.log(profile)
               return (
                 <a key={i} target={`_blank`} href={`https://universaleverything.io/${profile.sender}`}>
+                  <span>{emoji && emoji.filter(filterItem => filterItem.emojiId === profile.emojiId)[0].emoji}</span>
                   <img
                     className={`rounded ms-depth-16`}
                     alt={profile.LSP3Profile.name}
