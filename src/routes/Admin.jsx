@@ -60,13 +60,12 @@ function Admin() {
     const metadata = formData.get('metadata')
     const name = formData.get('name')
     const emoji = formData.get('emoji')
-    const icon = formData.get('icon')
     const price = formData.get('price')
     const status = formData.get('status')
     try {
       window.lukso.request({ method: 'eth_requestAccounts' }).then((accounts) => {
         contract.methods
-          .updateEmoji(emojiId, metadata, name, emoji, icon, _.toWei(price, `ether`), status)
+          .updateEmoji(emojiId, metadata, name, emoji, _.toWei(price, `ether`), status)
           .send({
             from: accounts[0],
           })
