@@ -115,7 +115,7 @@ function Home() {
                   <span className={`${styles.emoji__icon}`}>{item.emoji}</span>
                   {/* <Image className={styles.emoji__icon} src={`/${item.emoji}.svg`} alt={`${import.meta.env.NEXT_PUBLIC_NAME}`} width={32} height={32} /> */}
                   <h3>{(react && react.length > 0 && react.filter((filterItem, i) => filterItem.emojiId === item.emojiId).length) || 0}</h3>
-                  <small>{_.fromWei(item.price, `ether`)} ⏣LYX</small>
+                  <small>{_.fromWei(item.price, `ether`)} LYX</small>
                 </div>
               )
             })}
