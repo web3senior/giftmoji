@@ -146,15 +146,12 @@ function Admin() {
   return (
     <div className={`${styles.page} ms-motion-slideDownIn`}>
       <Toaster />
-      <div className={`__container`} data-width={`small`}>
-        <div className={`ms-Grid`}>
-          <div className={`ms-Grid-row ms-motion-slideUpIn`}>
+      <div className={`__container`} data-width={`xlarge`}>
+      <div className={`grid grid--fit grid--gap-1 w-100`} style={{ '--data-width': `300px` }}>
+      
             <div className="card">
               <div className="card__header d-flex align-items-center justify-content-between">
                 Add emoji
-                <a href={`../`} className={`text-center`}>
-                  Back
-                </a>
               </div>
               <div className="card__body">
                 {/* {errors?.email && <span>{errors.email}</span>} */}
@@ -184,9 +181,6 @@ function Admin() {
             <div className="card">
               <div className="card__header d-flex align-items-center justify-content-between">
                 Update emoji
-                <a href={`../`} className={`text-center`}>
-                  Back
-                </a>
               </div>
               <div className="card__body">
                 {/* {errors?.email && <span>{errors.email}</span>} */}
@@ -233,7 +227,7 @@ function Admin() {
                 </form>
               </div>
             </div>
-          </div>
+        
         </div>
       </div>
     </div>
