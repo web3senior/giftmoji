@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: center;
 
-  row-gap: 0.5rem;
+  row-gap: 1.5rem;
 
   padding: 0 1rem;
 }
@@ -34,11 +34,11 @@
 }
 
 .emoji {
-  width: 100px;
-  height: 100px;
-  border-radius: 999px;
+  position: relative;
+  width:52px;
+  height: 52px;
+  border-radius: var(--global-border-radius);
   cursor: pointer;
-  overflow: hidden;
 
   &:active {
     transform: scale(0.9);
@@ -48,7 +48,7 @@
     background-color: var(--white);
 
     .emoji__icon {
-      transform: rotate(10deg) scale(1.4);
+      transform: rotate(10deg) scale(1.7);
     }
 
     small {
@@ -62,13 +62,15 @@
     font-weight: 400;
     word-spacing: 1px;
     opacity: 0;
-    font-size: 9px;
+    font-size: 8px;
     position: relative;
     top: -.15rem;
   }
 
   &__icon {
-    font-size: 2.2rem;
+    position: absolute;
+    top: -1.5rem;
+    font-size: 1.6rem;
     will-change: transform;
     transition-property: transform;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -118,9 +120,9 @@
 
 .shimmer {
   background: #efefef;
-  width: 120px;
-  height: 120px;
-  border-radius: 999px;
+  width:68px;
+  height: 68px;
+  border-radius: var(--global-border-radius);
 }
 
 .header {
@@ -145,6 +147,7 @@
   grid-row-start: 2;
   user-select: none;
   width: 100%;
+
 }
 
 .footer {

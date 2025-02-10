@@ -92,9 +92,15 @@ function Home() {
       </header>
 
       <main className={`${styles.main}`}>
-        <div className={`grid grid--fit grid--gap-1 w-100`} style={{ '--data-width': `100px`, placeItems: `center` }}>
+        <div className={`grid grid--fit grid--gap-025 w-100`} style={{ '--data-width': `52px`, placeItems: `center` }}>
           {emoji.length === 0 && (
-            <div className={`grid grid--fit grid--gap-1 w-100`} style={{ '--data-width': `100px` }}>
+            <div className={`grid grid--fit grid--gap-1 w-100`} style={{ '--data-width': `52px` }}>
+              <div className={`shimmer ${styles.shimmer}`} />
+              <div className={`shimmer ${styles.shimmer}`} />
+              <div className={`shimmer ${styles.shimmer}`} />
+              <div className={`shimmer ${styles.shimmer}`} />
+              <div className={`shimmer ${styles.shimmer}`} />
+              <div className={`shimmer ${styles.shimmer}`} />
               <div className={`shimmer ${styles.shimmer}`} />
               <div className={`shimmer ${styles.shimmer}`} />
               <div className={`shimmer ${styles.shimmer}`} />
