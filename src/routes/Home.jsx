@@ -106,7 +106,6 @@ function Home() {
               <div className={`shimmer ${styles.shimmer}`} />
               <div className={`shimmer ${styles.shimmer}`} />
               <div className={`shimmer ${styles.shimmer}`} />
-              <div className={`shimmer ${styles.shimmer}`} />
             </div>
           )}
           {emoji &&
