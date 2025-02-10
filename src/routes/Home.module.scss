@@ -6,7 +6,7 @@
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
 
-  --emoji-name-color: #a0a1a3;
+  --emoji-name-color: #7e7e7e;
 
   --theme: #ff5cef;
 
@@ -35,8 +35,8 @@
 
 .emoji {
   position: relative;
-  width:52px;
-  height: 52px;
+  width:58px;
+  height: 58px;
   border-radius: var(--global-border-radius);
   cursor: pointer;
 
@@ -59,7 +59,7 @@
 
   small {
     color: var(--emoji-name-color);
-    font-weight: 400;
+    font-weight: 900;
     word-spacing: 1px;
     opacity: 0;
     font-size: 9px;
