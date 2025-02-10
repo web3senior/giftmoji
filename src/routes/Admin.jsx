@@ -208,10 +208,6 @@ function Admin() {
                   </div>
 
                   <div>
-                    <input type="text" name="icon" placeholder="Icon" required />
-                  </div>
-
-                  <div>
                     <input type="text" name="price" placeholder="Price" required />
                   </div>
                   <div>
