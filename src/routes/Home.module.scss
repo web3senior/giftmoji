@@ -34,8 +34,8 @@
 }
 
 .emoji {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 999px;
   cursor: pointer;
   overflow: hidden;
@@ -90,15 +90,15 @@
 
     span {
       position: absolute;
-      right: 0;
-      bottom: 0;
+      right: -3px;
+      bottom: -3px;
       z-index: 999;
       width: 18px;
       height: 18px;
       background-color: rgba(0, 0, 0, 0.5);
       padding: 0.01rem;
       border-radius: 999px;
-      border:1px solid var(--white);
+      border: 1px solid var(--white);
       font-size: 10px;
       display: flex;
       align-items: center;
