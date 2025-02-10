@@ -62,10 +62,11 @@ function Admin() {
     const emoji = formData.get('emoji')
     const price = formData.get('price')
     const status = formData.get('status')
+    
     try {
       window.lukso.request({ method: 'eth_requestAccounts' }).then((accounts) => {
         contract.methods
-          .updateEmoji(emojiId, metadata, name, emoji, _.toWei(price, `ether`), status)
+          .updateEmoji(emojiId, metadata, name, emoji, _.toWei(price, `ether`), String(status).toLowerCase() === 'true')
           .send({
             from: accounts[0],
           })
@@ -212,8 +213,8 @@ function Admin() {
                   <div>
                     status:
                     <select name="status" id="">
-                      <option value="true">True</option>
-                      <option value="false">False</option>
+                      <option value={true}>True</option>
+                      <option value={false}>False</option>
                     </select>
                   </div>
                   <button className="mt-20 btn" type="submit">
