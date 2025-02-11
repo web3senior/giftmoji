@@ -132,9 +132,9 @@ function Home() {
                       alt={profile?.LSP3Profile?.name}
                       title={_.toUtf8(profile.message)}
                       src={`${
-                        profile.LSP3Profile?.profileImage[0].url.search(`https://`) > -1
-                          ? profile.LSP3Profile?.profileImage[0].url.replace('ipfs://', '').replace('://', '')
-                          : import.meta.env.VITE_IPFS_GATEWAY + `bafkreif5hdukwj7hnuxc5o53bjfkd3im4d7ygeah4a77i5ut5ke3zyj4lu`
+                        profile.LSP3Profile?.profileImage[0].url.search(`https://`) === -1
+                          ? import.meta.env.VITE_IPFS_GATEWAY + `bafkreif5hdukwj7hnuxc5o53bjfkd3im4d7ygeah4a77i5ut5ke3zyj4lu`
+                          : profile.LSP3Profile?.profileImage[0].url.replace('ipfs://', '').replace('://', '')
                       }`}
                     />
                   ) : (
