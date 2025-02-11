@@ -128,9 +128,9 @@ function Home() {
                   <span>{emoji && emoji.filter((filterItem) => filterItem.emojiId === profile.emojiId)[0].emoji}</span>
                   <img
                     className={`rounded ms-depth-16`}
-                    alt={profile.LSP3Profile?.name}
+                    alt={profile?.LSP3Profile?.name}
                     title={_.toUtf8(profile.message)}
-                    src={`https://ipfs.io/ipfs/${profile.LSP3Profile.profileImage.length > 0 && profile.LSP3Profile.profileImage[0].url.replace('ipfs://', '').replace('://', '')}`}
+                    src={`https://ipfs.io/ipfs/${profile?.LSP3Profile?.profileImage.length > 0 && profile.LSP3Profile?.profileImage[0].url.replace('ipfs://', '').replace('://', '')}`}
                   />
                 </a>
               )
