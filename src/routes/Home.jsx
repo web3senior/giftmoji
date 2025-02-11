@@ -91,7 +91,7 @@ function Home() {
       </header>
 
       <main className={`${styles.main}`}>
-        <div className={`grid grid--fit grid--gap-1 w-100`} style={{ '--data-width': `100px`}}>
+        <div className={`grid grid--fit grid--gap-1 w-100`} style={{ '--data-width': `100px` }}>
           {emoji.length === 0 && (
             <div className={`d-flex w-100`} style={{ '--data-width': `58px` }}>
               <div className={`shimmer ${styles.shimmer}`} />
@@ -108,17 +108,17 @@ function Home() {
             </div>
           )}
           {emoji &&
-            emoji
-              .map((item, i) => {
-                return (
-                  <div key={i} className={`${styles.emoji} d-flex flex-column align-items-center justify-content-center card animate__animated animate__heartBeat`} title={item.name} onClick={(e) => action(e, item)}>
+            emoji.map((item, i) => {
+              return (
+                  <div key={i} data-name={item.name}
+                  className={`${styles.emoji} d-flex flex-column align-items-center justify-content-center card animate__animated animate__heartBeat`} title={item.name} onClick={(e) => action(e, item)}>
                     <span className={`${styles.emoji__icon}`}>{item.emoji}</span>
                     {/* <Image className={styles.emoji__icon} src={`/${item.emoji}.svg`} alt={`${import.meta.env.NEXT_PUBLIC_NAME}`} width={32} height={32} /> */}
                     <h3>{(react && react.length > 0 && react.filter((filterItem, i) => filterItem.emojiId === item.emojiId).length) || 0}</h3>
                     <small>{_.fromWei(item.price, `ether`)} LYX</small>
-                  </div>
-                )
-              })}
+                  </div>       
+              )
+            })}
         </div>
 
         {profiles && profiles.length > 0 && (
