@@ -42,10 +42,10 @@
 
   &:after {
     content: attr(data-name);
-    font-size: 9px;
+    font-size: 8px;
     color:var(--gray);
     position: absolute;
-    bottom: -.9rem;
+    top: 1rem;
     display: none;
   }
 
