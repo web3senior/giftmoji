@@ -40,7 +40,7 @@ export const getIPFS = async (CID) => {
  */
 
 export const fetchProfile = async (_addr) => {
-  const web3 = new Web3(provider)
+  const web3 = new Web3(window.lukso)
   const LSP0ERC725Contract = new web3.eth.Contract(LSP0ERC725Account.abi, _addr)
   try {
     return LSP0ERC725Contract.methods
@@ -59,7 +59,6 @@ export const fetchProfile = async (_addr) => {
         // console.log(hashFunction, ' | ', hash, ' | ', url)
         // check if it uses keccak256
         //  if (hashFunction === '0x6f357c6a') {
-        // download the json file
         // console.log(`-------------`,web3.utils.hexToUtf8(url).replace('ipfs://', '').replace('://', ''))
         const json = await getIPFS(web3.utils.hexToUtf8(url).replace('ipfs://', '').replace('://', ''))
         return json
@@ -125,6 +124,10 @@ export function AuthProvider({ children }) {
   }, [])
 
   useEffect(() => {
+    fetchProfile(`0x0D5C8B7cC12eD8486E1E0147CC0c3395739F138d`).then(res =>{
+      console.log(res)
+    })
+    return
     async function init() {
       try {
         const _accounts = provider.accounts

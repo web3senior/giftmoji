@@ -126,14 +126,20 @@ function Home() {
               return (
                 <a key={i} target={`_blank`} href={`https://universaleverything.io/${profile.sender}`}>
                   <span>{emoji && emoji.filter((filterItem) => filterItem.emojiId === profile.emojiId)[0].emoji}</span>
-                  <img
-                    className={`rounded ms-depth-16`}
-                    alt={profile?.LSP3Profile?.name}
-                    title={_.toUtf8(profile.message)}
-                    src={`${import.meta.env.VITE_IPFS_GATEWAY}${
-                      profile?.LSP3Profile?.profileImage.length > 0 ? profile.LSP3Profile?.profileImage[0].url.replace('ipfs://', '').replace('://', '') : `bafkreif5hdukwj7hnuxc5o53bjfkd3im4d7ygeah4a77i5ut5ke3zyj4lu`
-                    }`}
-                  />
+                  {profile?.LSP3Profile?.profileImage.length > 0 ? (
+                    <img
+                      className={`rounded ms-depth-16`}
+                      alt={profile?.LSP3Profile?.name}
+                      title={_.toUtf8(profile.message)}
+                      src={`${
+                        profile.LSP3Profile?.profileImage[0].url.search(`https://`) > -1
+                          ? profile.LSP3Profile?.profileImage[0].url.replace('ipfs://', '').replace('://', '')
+                          : import.meta.env.VITE_IPFS_GATEWAY + `bafkreif5hdukwj7hnuxc5o53bjfkd3im4d7ygeah4a77i5ut5ke3zyj4lu`
+                      }`}
+                    />
+                  ) : (
+                    <img className={`rounded ms-depth-16`} alt={``} title={_.toUtf8(profile.message)} src={`${import.meta.env.VITE_IPFS_GATEWAY + `bafkreif5hdukwj7hnuxc5o53bjfkd3im4d7ygeah4a77i5ut5ke3zyj4lu`}`} />
+                  )}
                 </a>
               )
             })}
