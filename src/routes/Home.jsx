@@ -28,27 +28,27 @@ function Home() {
     const message = prompt(`Please enter a message:`)
 
     try {
-     // window.lukso.request({ method: 'eth_requestAccounts' }).then((accounts) => {
-        contract.methods
-          .react(`${auth.contextAccounts[0]}`, emoji.emojiId, _.toHex(message))
-          .send({
-            from: auth.accounts[0],
-            value: emoji.price,
-          })
-          .then((res) => {
-            console.log(res)
+      // window.lukso.request({ method: 'eth_requestAccounts' }).then((accounts) => {
+      contract.methods
+        .react(`${auth.contextAccounts[0]}`, emoji.emojiId, _.toHex(message))
+        .send({
+          from: auth.accounts[0],
+          value: emoji.price,
+        })
+        .then((res) => {
+          console.log(res)
 
-            toast.success(`Done`)
-            toast.dismiss(t)
+          toast.success(`Done`)
+          toast.dismiss(t)
 
-            party.confetti(document.body, {
-              count: party.variation.range(20, 40),
-            })
+          party.confetti(document.body, {
+            count: party.variation.range(20, 40),
           })
-          .catch((error) => {
-            toast.dismiss(t)
-          })
-     // })
+        })
+        .catch((error) => {
+          toast.dismiss(t)
+        })
+      // })
     } catch (error) {
       console.log(error)
       toast.dismiss(t)
@@ -110,13 +110,12 @@ function Home() {
           {emoji &&
             emoji.map((item, i) => {
               return (
-                  <div key={i} data-name={item.name}
-                  className={`${styles.emoji} d-flex flex-column align-items-center justify-content-center card animate__animated animate__heartBeat`} title={item.name} onClick={(e) => action(e, item)}>
-                    <span className={`${styles.emoji__icon}`}>{item.emoji}</span>
-                    {/* <Image className={styles.emoji__icon} src={`/${item.emoji}.svg`} alt={`${import.meta.env.NEXT_PUBLIC_NAME}`} width={32} height={32} /> */}
-                    <h3>{(react && react.length > 0 && react.filter((filterItem, i) => filterItem.emojiId === item.emojiId).length) || 0}</h3>
-                    <small>{_.fromWei(item.price, `ether`)} LYX</small>
-                  </div>       
+                <div key={i} data-name={item.name} className={`${styles.emoji} d-flex flex-column align-items-center justify-content-center card animate__animated animate__heartBeat`} title={item.name} onClick={(e) => action(e, item)}>
+                  <span className={`${styles.emoji__icon}`}>{item.emoji}</span>
+                  {/* <Image className={styles.emoji__icon} src={`/${item.emoji}.svg`} alt={`${import.meta.env.NEXT_PUBLIC_NAME}`} width={32} height={32} /> */}
+                  <h3>{(react && react.length > 0 && react.filter((filterItem, i) => filterItem.emojiId === item.emojiId).length) || 0}</h3>
+                  <small>{_.fromWei(item.price, `ether`)} LYX</small>
+                </div>
               )
             })}
         </div>
@@ -129,7 +128,7 @@ function Home() {
                   <span>{emoji && emoji.filter((filterItem) => filterItem.emojiId === profile.emojiId)[0].emoji}</span>
                   <img
                     className={`rounded ms-depth-16`}
-                    alt={profile.LSP3Profile.name}
+                    alt={profile.LSP3Profile?.name}
                     title={_.toUtf8(profile.message)}
                     src={`https://ipfs.io/ipfs/${profile.LSP3Profile.profileImage.length > 0 && profile.LSP3Profile.profileImage[0].url.replace('ipfs://', '').replace('://', '')}`}
                   />
