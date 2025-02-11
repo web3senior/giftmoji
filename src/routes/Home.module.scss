@@ -45,7 +45,7 @@
     font-size: 8px;
     color:var(--gray);
     position: absolute;
-    top: 1rem;
+    top: -1.8rem;
     display: none;
   }
 
@@ -89,6 +89,7 @@
     transition-property: transform;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
+    z-index: 999;
   }
 }
 
