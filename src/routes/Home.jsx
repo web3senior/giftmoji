@@ -130,7 +130,9 @@ function Home() {
                     className={`rounded ms-depth-16`}
                     alt={profile?.LSP3Profile?.name}
                     title={_.toUtf8(profile.message)}
-                    src={`https://ipfs.io/ipfs/${profile?.LSP3Profile?.profileImage.length > 0 && profile.LSP3Profile?.profileImage[0].url.replace('ipfs://', '').replace('://', '')}`}
+                    src={`${import.meta.env.VITE_IPFS_GATEWAY}${
+                      profile?.LSP3Profile?.profileImage.length > 0 ? profile.LSP3Profile?.profileImage[0].url.replace('ipfs://', '').replace('://', '') : `bafkreif5hdukwj7hnuxc5o53bjfkd3im4d7ygeah4a77i5ut5ke3zyj4lu`
+                    }`}
                   />
                 </a>
               )
