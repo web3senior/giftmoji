@@ -40,14 +40,14 @@
   border-radius: var(--global-border-radius);
   cursor: pointer;
 
-  &:after {
-    content: attr(data-name);
-    font-size: 8px;
-    color:var(--gray);
-    position: absolute;
-    top: -1.8rem;
-    display: none;
-  }
+  // &:after {
+  //   content: attr(data-name);
+  //   font-size: 8px;
+  //   color:var(--gray);
+  //   position: absolute;
+  //   top: -1.8rem;
+  //   display: none !important;
+  // }
 
   &:active {
     transform: scale(0.9);
@@ -56,6 +56,7 @@
   &:hover {
     background-color: var(--white);
 
+ 
     .emoji__icon {
       transform: rotate(10deg) scale(1.7);
     }
@@ -191,11 +192,7 @@
   .page {
     padding: 0.5rem;
   }
-  .emoji {
-    &:after {
-      display: block !important;
-    }
-  }
+
   .main {
     align-items: center;
   }
