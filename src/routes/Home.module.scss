@@ -98,6 +98,11 @@
   column-gap: 0.5rem;
   max-height: 100px;
   padding: 1.4rem 0;
+
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
   overflow-y: hidden;
   overflow-x: auto;
 
@@ -106,7 +111,8 @@
     transition: all 100ms ease-in;
     width: 32px;
     height: 32px;
-    
+
+    display: inline-block;
     &:hover {
       transform: scale(1.2);
       filter: brightness(100%);
