@@ -121,7 +121,7 @@ function Home() {
         </div>
 
         {profiles && profiles.length > 0 && (
-          <div className={`${styles.profiles} w-100`}>
+          <div className={`${styles.profiles} grid grid--fill grid--gap-1 w-100 `} style={{ '--data-width': `32px` }}>
             {profiles.map((profile, i) => {
               return (
                 <a key={i} target={`_blank`} href={`https://universaleverything.io/${profile.sender}`}>
