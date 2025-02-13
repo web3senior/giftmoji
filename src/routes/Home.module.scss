@@ -104,6 +104,9 @@
   a {
     position: relative;
     transition: all 100ms ease-in;
+    width: 32px;
+    height: 32px;
+    
     &:hover {
       transform: scale(1.2);
       filter: brightness(100%);
