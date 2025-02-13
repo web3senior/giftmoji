@@ -138,7 +138,7 @@ function Home() {
                       }`}
                     />
                   ) : (
-                    <img className={`rounded ms-depth-16`} alt={``} title={_.toUtf8(profile.message)} src={`${import.meta.env.VITE_IPFS_GATEWAY + `bafkreif5hdukwj7hnuxc5o53bjfkd3im4d7ygeah4a77i5ut5ke3zyj4lu`}`} />
+                    <img className={`rounded ms-depth-16`} alt={``} title={_.toUtf8(profile.message)} src={`https://universaleverything.io/assets/images/profile-default.svg`} />
                   )}
                 </a>
               )
