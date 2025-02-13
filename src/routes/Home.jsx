@@ -126,7 +126,7 @@ function Home() {
               return (
                 <a key={i} target={`_blank`} href={`https://universaleverything.io/${profile.sender}`}>
                   <span>{emoji && emoji.filter((filterItem) => filterItem.emojiId === profile.emojiId)[0].emoji}</span>
-                  {profile.LSP3Profile.profileImage.length > 0 ? (
+                  {profile.LSP3Profile?.profileImage.length > 0 ? (
                     <img
                       className={`rounded ms-depth-16`}
                       alt={profile?.LSP3Profile?.name}
