@@ -15,18 +15,21 @@ function Home() {
   const [profiles, setProfiles] = useState()
   let [searchParams] = useSearchParams()
   const auth = useUpProvider()
-  const web3 = new Web3(auth.provider)
-  const _ = web3.utils
-  const contract = new web3.eth.Contract(ABI, import.meta.env.VITE_CONTRACT)
+  const web3Readonly = new Web3(import.meta.env.VITE_LUKSO_PROVIDER)
+  const _ = web3Readonly.utils
+  const contractReadonly = new web3Readonly.eth.Contract(ABI, import.meta.env.VITE_CONTRACT)
 
-  const getAllEmoji = async () => await contract.methods.getAllEmoji().call()
+  const getAllEmoji = async () => await contractReadonly.methods.getAllEmoji().call()
 
-  const getAllUserReaction = async () => await contract.methods.getAllUserReaction(`${auth.contextAccounts[0]}`).call()
+  const getAllUserReaction = async () => await contractReadonly.methods.getAllUserReaction(`${auth.contextAccounts[0]}`).call()
 
   const action = async (e, emoji) => {
     const t = toast.loading(`Waiting for transaction's confirmation`)
 
     const message = prompt(`Please enter a message:`)
+
+    const web3 = new Web3(auth.provider)
+    const contract = new web3.eth.Contract(ABI, import.meta.env.VITE_CONTRACT)
 
     try {
       // window.lukso.request({ method: 'eth_requestAccounts' }).then((accounts) => {
@@ -73,7 +76,7 @@ function Home() {
    */
 
   const fetchProfile = async (_addr) => {
-    const LSP0ERC725Contract = new web3.eth.Contract(LSP0ERC725Account.abi, _addr)
+    const LSP0ERC725Contract = new web3Readonly.eth.Contract(LSP0ERC725Account.abi, _addr)
     try {
       return LSP0ERC725Contract.methods
         .getData('0x5ef83ad9559033e6e941db7d7c495acdce616347d28e90c7ce47cbfcfcad3bc5')
@@ -93,7 +96,7 @@ function Home() {
           //  if (hashFunction === '0x6f357c6a') {
           // download the json file
           // console.log(`-------------`,web3.utils.hexToUtf8(url).replace('ipfs://', '').replace('://', ''))
-          const json = await getIPFS(web3.utils.hexToUtf8(url).replace('ipfs://', '').replace('://', ''))
+          const json = await getIPFS(_.hexToUtf8(url).replace('ipfs://', '').replace('://', ''))
           return json
         })
     } catch (error) {

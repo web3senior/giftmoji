@@ -23,7 +23,9 @@ import { createContext, useContext, useEffect, useState, useMemo } from 'react'
 
 const UpContext = createContext(undefined)
 
-const provider = typeof window !== 'undefined' ? createClientUPProvider() : import.meta.env.VITE_LUKSO_PROVIDER
+const provider = typeof window !== 'undefined' ? createClientUPProvider() : null
+
+
 
 export function useUpProvider() {
   const context = useContext(UpContext)
@@ -53,7 +55,6 @@ export function UpProvider({ children }) {
 
   useEffect(() => {
     let mounted = true
-
     async function init() {
       try {
         if (!client || !provider) return
