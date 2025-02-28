@@ -104,8 +104,8 @@ function Home() {
 
   useEffect(() => {
     console.clear()
-
-    console.log(auth)
+    console.log(`%c🆙`,'font-size:4rem')
+    console.log(`Context account: `, auth.contextAccounts[0])
 
     getAllEmoji().then((res) => {
       console.log(res)
