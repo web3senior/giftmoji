@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router'
-import { AuthProvider } from './contexts/AuthContext'
+import { UpProvider } from './contexts/UpProvider.jsx'
 import './index.scss'
 import './styles/global.scss'
 
@@ -14,7 +14,7 @@ const root = document.getElementById('root')
 createRoot(root).render(
   <BrowserRouter>
     <Routes>
-      <Route index element={<AuthProvider><Home /></AuthProvider>} />
+      <Route index element={<UpProvider><Home /></UpProvider>} />
       <Route path="admin" element={<Admin />} />
     </Routes>
   </BrowserRouter>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, useSearchParams } from 'react-router'
-import { web3, contract, useAuth, _, provider } from './../contexts/AuthContext'
+import { useUpProvider } from '../contexts/UpProvider'
+import LSP0ERC725Account from '@lukso/lsp-smart-contracts/artifacts/LSP0ERC725Account.json'
 import party from 'party-js'
 import ABI from './../abi/giftmoji.json'
 import toast, { Toaster } from 'react-hot-toast'
@@ -8,19 +9,19 @@ import Web3 from 'web3'
 import Hero from './../assets/hero.svg'
 import styles from './Home.module.scss'
 
-const web3ReadOnly = new Web3(import.meta.env.VITE_LUKSO_PROVIDER)
-const contractReadOnly = new web3ReadOnly.eth.Contract(ABI, import.meta.env.VITE_CONTRACT)
-
 function Home() {
   const [emoji, setEmoji] = useState([])
   const [react, setReact] = useState([])
   const [profiles, setProfiles] = useState()
   let [searchParams] = useSearchParams()
-  const auth = useAuth()
+  const auth = useUpProvider()
+  const web3 = new Web3(auth.provider)
+  const _ = web3.utils
+  const contract = new web3.eth.Contract(ABI, import.meta.env.VITE_CONTRACT)
 
-  const getAllEmoji = async () => await contractReadOnly.methods.getAllEmoji().call()
+  const getAllEmoji = async () => await contract.methods.getAllEmoji().call()
 
-  const getAllUserReaction = async () => await contractReadOnly.methods.getAllUserReaction(`${auth.contextAccounts[0]}`).call()
+  const getAllUserReaction = async () => await contract.methods.getAllUserReaction(`0xcec6d2dd0d8d54e137d0d0e5787dd2208e297ecf`).call()
 
   const action = async (e, emoji) => {
     const t = toast.loading(`Waiting for transaction's confirmation`)
@@ -55,7 +56,59 @@ function Home() {
     }
   }
 
+
+ const getIPFS = async (CID) => {
+  let requestOptions = {
+    method: 'GET',
+    redirect: 'follow',
+  }
+  const response = await fetch(`${import.meta.env.VITE_IPFS_GATEWAY}${CID}`, requestOptions)
+  if (!response.ok) return { result: false } //throw new Response('Failed to get data', { status: 500 })
+  return response.json()
+}
+
+/**
+ * Fetch Universal Profile
+ * @param {address} addr
+ * @returns
+ */
+
+ const fetchProfile = async (_addr) => {
+  const web3 = new Web3(import.meta.env.VITE_LUKSO_PROVIDER)
+  const LSP0ERC725Contract = new web3.eth.Contract(LSP0ERC725Account.abi, _addr)
+  try {
+    return LSP0ERC725Contract.methods
+      .getData('0x5ef83ad9559033e6e941db7d7c495acdce616347d28e90c7ce47cbfcfcad3bc5')
+      .call()
+      .then(async (data) => {
+        data = data.substring(6, data.length)
+        // console.log(data)
+        //  data ="0x" + data.substring(6)
+        //  console.log(data)
+        // slice the bytes to get its pieces
+        const hashFunction = '0x' + data.slice(0, 8)
+        // console.log(hashFunction)
+        const hash = '0x' + data.slice(76)
+        const url = '0x' + data.slice(76)
+        // console.log(hashFunction, ' | ', hash, ' | ', url)
+        // check if it uses keccak256
+        //  if (hashFunction === '0x6f357c6a') {
+        // download the json file
+        // console.log(`-------------`,web3.utils.hexToUtf8(url).replace('ipfs://', '').replace('://', ''))
+        const json = await getIPFS(web3.utils.hexToUtf8(url).replace('ipfs://', '').replace('://', ''))
+        return json
+      })
+  } catch (error) {
+    console.log(`fetch profile error => `, error)
+    return []
+  }
+}
+
   useEffect(() => {
+    console.clear()
+
+    console.log(auth)
+
     getAllEmoji().then((res) => {
       console.log(res)
       if (res.length < 1) return
@@ -69,7 +122,7 @@ function Home() {
       let responses_with_profile = []
       await Promise.all(
         res.map((response, i) => {
-          return auth.fetchProfile(response.sender).then((profile) => {
+          return fetchProfile(response.sender).then((profile) => {
             responses_with_profile.push(Object.assign(profile, response))
           })
         })
@@ -82,6 +135,7 @@ function Home() {
   return (
     <div className={`${styles.page} __container`} data-width={`large`}>
       <Toaster />
+
       <header className={`${styles.header} d-flex flex-column align-items-center justify-content-between`}>
         <figure className={`ms-motion-slideDownIn`}>
           <img className={`Hero`} src={Hero} alt={`${import.meta.env.VITE_NAME}`} width={220} height={48} />
@@ -133,7 +187,7 @@ function Home() {
                       title={_.toUtf8(profile.message)}
                       src={`${
                         profile.LSP3Profile?.profileImage[0].url.search(`https://`) === -1
-                          ?import.meta.env.VITE_IPFS_GATEWAY + profile.LSP3Profile?.profileImage[0].url.replace('ipfs://', '').replace('://', '')
+                          ? import.meta.env.VITE_IPFS_GATEWAY + profile.LSP3Profile?.profileImage[0].url.replace('ipfs://', '').replace('://', '')
                           : profile.LSP3Profile?.profileImage[0].url
                       }`}
                     />
