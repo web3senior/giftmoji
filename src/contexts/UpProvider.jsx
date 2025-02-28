@@ -125,6 +125,9 @@ export function UpProvider({ children }) {
       setIsSearching,
     }
   }, [client, chainId, accounts, contextAccounts, walletConnected, selectedAddress, isSearching])
+
+  if (contextAccounts.length === 0) return <>Loading...</>
+
   return (
     <UpContext.Provider value={data}>
       <div className="min-h-screen flex items-center justify-center">{children}</div>
