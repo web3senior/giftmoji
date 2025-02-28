@@ -126,6 +126,7 @@ export function UpProvider({ children }) {
     }
   }, [client, chainId, accounts, contextAccounts, walletConnected, selectedAddress, isSearching])
 
+  // fill contextAccount
   if (contextAccounts.length === 0) return <>Loading...</>
 
   return (
