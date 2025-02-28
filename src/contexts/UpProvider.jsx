@@ -23,7 +23,7 @@ import { createContext, useContext, useEffect, useState, useMemo } from 'react'
 
 const UpContext = createContext(undefined)
 
-const provider = typeof window !== 'undefined' ? createClientUPProvider() : null
+const provider = typeof window !== 'undefined' ? createClientUPProvider() : import.meta.env.VITE_LUKSO_PROVIDER
 
 export function useUpProvider() {
   const context = useContext(UpContext)
