@@ -1,0 +1,39 @@
+/* [project]/app/user/profile/page.module.scss.module.css [app-client] (css) */
+.page-module-scss-module__4yLm9a__page {
+  --gray-rgb: 0, 0, 0;
+  --gray-alpha-200: rgba(var(--gray-rgb), .08);
+  --gray-alpha-100: rgba(var(--gray-rgb), .05);
+  --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2;
+  height: 100%;
+}
+
+.page-module-scss-module__4yLm9a__pfp img {
+  width: 48px;
+  height: 48px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .page-module-scss-module__4yLm9a__page {
+    --gray-rgb: 255, 255, 255;
+    --gray-alpha-200: rgba(var(--gray-rgb), .145);
+    --gray-alpha-100: rgba(var(--gray-rgb), .06);
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a.page-module-scss-module__4yLm9a__primary:hover {
+    background: var(--button-primary-hover);
+    border-color: #0000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .page-module-scss-module__4yLm9a__logo {
+    filter: invert();
+  }
+}
+
+/*# sourceMappingURL=app_user_profile_page_module_scss_module_css_f9ee138c._.single.css.map*/

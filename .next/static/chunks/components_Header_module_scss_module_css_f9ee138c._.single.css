@@ -1,0 +1,198 @@
+/* [project]/components/Header.module.scss.module.css [app-client] (css) */
+@media only screen and (width >= 740px) {
+  .Header-module-scss-module__JJFXqa__no-float-tablet {
+    float: none;
+  }
+
+  .Header-module-scss-module__JJFXqa__no-padding-tablet {
+    padding: 0;
+  }
+
+  .Header-module-scss-module__JJFXqa__no-margin-tablet {
+    margin: 0;
+  }
+
+  .Header-module-scss-module__JJFXqa__none-tablet {
+    display: none;
+  }
+
+  .Header-module-scss-module__JJFXqa__block-tablet {
+    display: block;
+  }
+
+  .Header-module-scss-module__JJFXqa__inline-block-tablet {
+    display: inline-block;
+  }
+
+  .Header-module-scss-module__JJFXqa__inline-tablet {
+    display: inline;
+  }
+
+  .Header-module-scss-module__JJFXqa__text-left-tablet {
+    text-align: left;
+  }
+
+  .Header-module-scss-module__JJFXqa__text-right-tablet {
+    text-align: right;
+  }
+
+  .Header-module-scss-module__JJFXqa__text-center-tablet {
+    text-align: center;
+  }
+
+  .Header-module-scss-module__JJFXqa__text-justify-tablet {
+    text-align: justify;
+  }
+
+  .Header-module-scss-module__JJFXqa__no-col-tablet {
+    float: none;
+    width: auto;
+  }
+
+  .Header-module-scss-module__JJFXqa__no-push-tablet, .Header-module-scss-module__JJFXqa__no-pull-tablet {
+    left: 0;
+  }
+}
+
+@media only screen and (width >= 980px) {
+  .Header-module-scss-module__JJFXqa__no-float-desktop {
+    float: none;
+  }
+
+  .Header-module-scss-module__JJFXqa__no-padding-desktop {
+    padding: 0;
+  }
+
+  .Header-module-scss-module__JJFXqa__no-margin-desktop {
+    margin: 0;
+  }
+
+  .Header-module-scss-module__JJFXqa__none-desktop {
+    display: none;
+  }
+
+  .Header-module-scss-module__JJFXqa__block-desktop {
+    display: block;
+  }
+
+  .Header-module-scss-module__JJFXqa__inline-block-desktop {
+    display: inline-block;
+  }
+
+  .Header-module-scss-module__JJFXqa__inline-desktop {
+    display: inline;
+  }
+
+  .Header-module-scss-module__JJFXqa__text-left-desktop {
+    text-align: left;
+  }
+
+  .Header-module-scss-module__JJFXqa__text-right-desktop {
+    text-align: right;
+  }
+
+  .Header-module-scss-module__JJFXqa__text-center-desktop {
+    text-align: center;
+  }
+
+  .Header-module-scss-module__JJFXqa__text-justify-desktop {
+    text-align: justify;
+  }
+
+  .Header-module-scss-module__JJFXqa__no-col-desktop {
+    float: none;
+    width: auto;
+  }
+
+  .Header-module-scss-module__JJFXqa__no-push-desktop, .Header-module-scss-module__JJFXqa__no-pull-desktop {
+    left: 0;
+  }
+}
+
+@media only screen and (width >= 1140px) {
+  .Header-module-scss-module__JJFXqa__no-float-hd {
+    float: none;
+  }
+
+  .Header-module-scss-module__JJFXqa__no-padding-hd {
+    padding: 0;
+  }
+
+  .Header-module-scss-module__JJFXqa__no-margin-hd {
+    margin: 0;
+  }
+
+  .Header-module-scss-module__JJFXqa__none-hd {
+    display: none;
+  }
+
+  .Header-module-scss-module__JJFXqa__block-hd {
+    display: block;
+  }
+
+  .Header-module-scss-module__JJFXqa__inline-block-hd {
+    display: inline-block;
+  }
+
+  .Header-module-scss-module__JJFXqa__inline-hd {
+    display: inline;
+  }
+
+  .Header-module-scss-module__JJFXqa__text-left-hd {
+    text-align: left;
+  }
+
+  .Header-module-scss-module__JJFXqa__text-right-hd {
+    text-align: right;
+  }
+
+  .Header-module-scss-module__JJFXqa__text-center-hd {
+    text-align: center;
+  }
+
+  .Header-module-scss-module__JJFXqa__text-justify-hd {
+    text-align: justify;
+  }
+
+  .Header-module-scss-module__JJFXqa__no-col-hd {
+    float: none;
+    width: auto;
+  }
+
+  .Header-module-scss-module__JJFXqa__no-push-hd, .Header-module-scss-module__JJFXqa__no-pull-hd {
+    left: 0;
+  }
+}
+
+.Header-module-scss-module__JJFXqa__header {
+  z-index: 999;
+  grid-area: 1 / 1 / 2 / 1;
+  width: 100%;
+  height: 70px;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+}
+
+.Header-module-scss-module__JJFXqa__header ul {
+  height: 100%;
+}
+
+.Header-module-scss-module__JJFXqa__header ul li {
+  flex: 1;
+}
+
+.Header-module-scss-module__JJFXqa__header ul li h1 {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.Header-module-scss-module__JJFXqa__header ul li small {
+  font-size: 11px;
+}
+
+.Header-module-scss-module__JJFXqa__logo, .Header-module-scss-module__JJFXqa__logo figure {
+  column-gap: .5rem;
+}
+
+/*# sourceMappingURL=components_Header_module_scss_module_css_f9ee138c._.single.css.map*/

@@ -1,0 +1,61 @@
+/* [project]/components/Loading.module.scss.module.css [app-client] (css) */
+.Loading-module-scss-module__6ia4QW__loading {
+  background-color: var(--white);
+  z-index: 999;
+  isolation: isolate;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+.Loading-module-scss-module__6ia4QW__loading__container {
+  row-gap: .4rem;
+  max-width: 115px;
+  overflow: hidden;
+}
+
+.Loading-module-scss-module__6ia4QW__loading__container figure {
+  width: 4rem;
+}
+
+.Loading-module-scss-module__6ia4QW__loading__container figure img {
+  width: 100%;
+}
+
+.Loading-module-scss-module__6ia4QW__loading__container > div {
+  background-color: var(--black-050);
+  width: 100%;
+  height: 3px;
+  margin-top: 1rem;
+}
+
+.Loading-module-scss-module__6ia4QW__loading__container > div:before {
+  content: "";
+  background: var(--color-primary);
+  height: 100%;
+  animation: 1.5s ease-in-out infinite Loading-module-scss-module__6ia4QW__progress;
+  position: absolute;
+}
+
+@keyframes Loading-module-scss-module__6ia4QW__progress {
+  0% {
+    width: 0;
+    left: 0;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+    right: 0;
+  }
+}
+
+
+/*# sourceMappingURL=components_Loading_module_scss_module_73c03a52.css.map*/

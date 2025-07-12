@@ -1,0 +1,240 @@
+/* [project]/components/ConnectWallet.module.scss.module.css [app-client] (css) */
+@media only screen and (width >= 740px) {
+  .ConnectWallet-module-scss-module__xXpWAa__no-float-tablet {
+    float: none;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__no-padding-tablet {
+    padding: 0;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__no-margin-tablet {
+    margin: 0;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__none-tablet {
+    display: none;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__block-tablet {
+    display: block;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__inline-block-tablet {
+    display: inline-block;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__inline-tablet {
+    display: inline;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__text-left-tablet {
+    text-align: left;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__text-right-tablet {
+    text-align: right;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__text-center-tablet {
+    text-align: center;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__text-justify-tablet {
+    text-align: justify;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__no-col-tablet {
+    float: none;
+    width: auto;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__no-push-tablet, .ConnectWallet-module-scss-module__xXpWAa__no-pull-tablet {
+    left: 0;
+  }
+}
+
+@media only screen and (width >= 980px) {
+  .ConnectWallet-module-scss-module__xXpWAa__no-float-desktop {
+    float: none;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__no-padding-desktop {
+    padding: 0;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__no-margin-desktop {
+    margin: 0;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__none-desktop {
+    display: none;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__block-desktop {
+    display: block;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__inline-block-desktop {
+    display: inline-block;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__inline-desktop {
+    display: inline;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__text-left-desktop {
+    text-align: left;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__text-right-desktop {
+    text-align: right;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__text-center-desktop {
+    text-align: center;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__text-justify-desktop {
+    text-align: justify;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__no-col-desktop {
+    float: none;
+    width: auto;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__no-push-desktop, .ConnectWallet-module-scss-module__xXpWAa__no-pull-desktop {
+    left: 0;
+  }
+}
+
+@media only screen and (width >= 1140px) {
+  .ConnectWallet-module-scss-module__xXpWAa__no-float-hd {
+    float: none;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__no-padding-hd {
+    padding: 0;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__no-margin-hd {
+    margin: 0;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__none-hd {
+    display: none;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__block-hd {
+    display: block;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__inline-block-hd {
+    display: inline-block;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__inline-hd {
+    display: inline;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__text-left-hd {
+    text-align: left;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__text-right-hd {
+    text-align: right;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__text-center-hd {
+    text-align: center;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__text-justify-hd {
+    text-align: justify;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__no-col-hd {
+    float: none;
+    width: auto;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__no-push-hd, .ConnectWallet-module-scss-module__xXpWAa__no-pull-hd {
+    left: 0;
+  }
+}
+
+.ConnectWallet-module-scss-module__xXpWAa__connect button {
+  color: var(--white, #fff);
+  background-color: var(--color-primary);
+  will-change: transform;
+  border-radius: 999px;
+  padding: .5rem 1rem;
+  font-weight: 500;
+  transition: transform .2s;
+  box-shadow: 0 4px 12px #0000001a;
+}
+
+.ConnectWallet-module-scss-module__xXpWAa__connect button:hover {
+  transform: scale(1.025);
+}
+
+.ConnectWallet-module-scss-module__xXpWAa__connect button:active {
+  transform: scale(.95);
+}
+
+figure.ConnectWallet-module-scss-module__xXpWAa__pfp {
+  width: 32px;
+  height: 32px;
+}
+
+figure.ConnectWallet-module-scss-module__xXpWAa__pfp img {
+  width: inherit;
+  height: inherit;
+}
+
+.ConnectWallet-module-scss-module__xXpWAa__wallet {
+  border-radius: var(--global-border-radius);
+  column-gap: .5rem;
+  padding: .2rem .25rem .2rem .5rem;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px #0000001a;
+}
+
+.ConnectWallet-module-scss-module__xXpWAa__wallet:hover {
+  transition: all .3s ease-in-out;
+  transform: scale(1.025);
+}
+
+.ConnectWallet-module-scss-module__xXpWAa__wallet:active {
+  transition: all .3s;
+  transform: scale(.95);
+}
+
+.ConnectWallet-module-scss-module__xXpWAa__wallet img {
+  border-radius: 999px;
+  transform: scale(.8);
+}
+
+.ConnectWallet-module-scss-module__xXpWAa__wallet li {
+  column-gap: .5rem;
+}
+
+.ConnectWallet-module-scss-module__xXpWAa__wallet li:last-child {
+  background-color: var(--black-025);
+  border-radius: var(--global-border-radius);
+  padding-left: .1rem;
+}
+
+@media (width <= 768px) {
+  .ConnectWallet-module-scss-module__xXpWAa__wallet {
+    padding: 0;
+  }
+
+  .ConnectWallet-module-scss-module__xXpWAa__wallet li:first-child, .ConnectWallet-module-scss-module__xXpWAa__wallet li:last-child span {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=components_ConnectWallet_module_scss_module_css_f9ee138c._.single.css.map*/

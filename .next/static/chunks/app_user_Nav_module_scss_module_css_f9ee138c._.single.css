@@ -1,0 +1,85 @@
+/* [project]/app/user/Nav.module.scss.module.css [app-client] (css) */
+.Nav-module-scss-module__E_HeVG__nav {
+  --gray-rgb: 0, 0, 0;
+  --gray-alpha-200: rgba(var(--gray-rgb), .08);
+  --gray-alpha-100: rgba(var(--gray-rgb), .05);
+  --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2;
+  border-radius: var(--global-border-radius);
+  background-color: var(--white);
+  width: 200px;
+}
+
+.Nav-module-scss-module__E_HeVG__nav ul {
+  row-gap: 1rem;
+  padding: 1rem;
+}
+
+.Nav-module-scss-module__E_HeVG__miniNav {
+  background-color: var(--black-050);
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  max-width: 100dvw;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  display: none;
+  overflow: auto;
+}
+
+.Nav-module-scss-module__E_HeVG__miniNav a {
+  background-color: var(--white);
+  text-align: center;
+  border-radius: var(--global-border-radius);
+  min-width: 150px;
+  padding: 1rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.Nav-module-scss-module__E_HeVG__miniNav a:not(:first-child) {
+  margin-right: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .Nav-module-scss-module__E_HeVG__page {
+    --gray-rgb: 255, 255, 255;
+    --gray-alpha-200: rgba(var(--gray-rgb), .145);
+    --gray-alpha-100: rgba(var(--gray-rgb), .06);
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+  }
+
+  .Nav-module-scss-module__E_HeVG__logo {
+    filter: invert();
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a.Nav-module-scss-module__E_HeVG__primary:hover {
+    background: var(--button-primary-hover);
+    border-color: #0000;
+  }
+
+  a.Nav-module-scss-module__E_HeVG__secondary:hover {
+    background: var(--button-secondary-hover);
+    border-color: #0000;
+  }
+
+  .Nav-module-scss-module__E_HeVG__footer a:hover {
+    text-underline-offset: 4px;
+    text-decoration: underline;
+  }
+}
+
+@media (width <= 600px) {
+  .Nav-module-scss-module__E_HeVG__miniNav {
+    display: block !important;
+  }
+
+  .Nav-module-scss-module__E_HeVG__nav {
+    padding-bottom: 80px;
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=app_user_Nav_module_scss_module_css_f9ee138c._.single.css.map*/

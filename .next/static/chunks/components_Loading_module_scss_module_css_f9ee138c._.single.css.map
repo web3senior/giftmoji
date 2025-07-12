@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/components/Loading.module.scss.module.css"],"sourcesContent":[".loading{position:fixed;inset:0;display:flex;flex-flow:column nowrap;align-items:center;justify-content:center;background-color:var(--white);z-index:999;isolation:isolate;overflow:hidden}.loading__container{max-width:115px;row-gap:.4rem;overflow:hidden}.loading__container figure{width:4rem}.loading__container figure img{width:100%}.loading__container>div{margin-top:1rem;width:100%;height:3px;background-color:var(--black-050)}.loading__container>div:before{content:\"\";position:absolute;height:100%;background:var(--color-primary);animation:progress 1.5s infinite ease-in-out}@keyframes progress{0%{left:0;width:0}50%{width:100%}100%{right:0;width:0}}"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;AAA2L;;;;;;AAAkE;;;;AAAsC;;;;AAA0C;;;;;;;AAAgG;;;;;;;;AAAqJ"}}]
+}
