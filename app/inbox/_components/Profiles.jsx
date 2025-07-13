@@ -220,7 +220,7 @@ const auth = useUpProvider()
                 <a target={`_blank`} href={`https://universaleverything.io/${item.sender}`}>
                   <div className={`${styles.pfp} d-flex flex-row align-items-center justify-content-between grid--gap-1`}>
                     <figure>
-                      <img alt={item.fullname} title={item.id} src={item.profileImages[0].src} className={`rounded`} />
+                      <img alt={item.fullname} title={item.id} src={item.profileImages.length > 0 && item.profileImages[0].src} className={`rounded`} />
                       <img alt={`♥`} src={`./emoji/${emoji.filter(filterItem => filterItem.emojiId === item.emojiId)[0].emoji}.svg`} />
                     </figure>
                     <div className={`d-flex flex-column align-items-start justify-content-between grid--gap-025`}>
