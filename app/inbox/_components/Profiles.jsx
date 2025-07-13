@@ -161,7 +161,7 @@ const auth = useUpProvider()
       setEmoji(res)
     })
 
-    getReaction(auth.contextAccount).then(async (reactionData) => {
+    getReaction(auth.contextAccounts[0]).then(async (reactionData) => {
       console.log(reactionData)
       if (reactionData.length < 1) return
       setReaction(reactionData)
