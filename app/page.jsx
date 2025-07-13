@@ -50,7 +50,7 @@ export default function Page() {
         .react(auth.accounts[0], selectedEmoji.item.emojiId, web3.utils.toHex(message))
         .send({
           from: auth.accounts[0],
-          value: emoji.price,
+          value: selectedEmoji.item.price,
         })
         .then((res) => {
           console.log(res)
