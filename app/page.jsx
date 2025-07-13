@@ -47,7 +47,7 @@ export default function Page() {
           // Create a Contract instance
           const contract = new web3.eth.Contract(ABI, process.env.NEXT_PUBLIC_CONTRACT)
         contract.methods
-        .react(`${auth.wallet}`, selectedEmoji.item.emojiId, web3.utils.toHex(message))
+        .react(`${auth.accounts[0]}`, selectedEmoji.item.emojiId, web3.utils.toHex(message))
         .send({
           from: auth.accounts[0],
           value: emoji.price,
