@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/components/PageTitle.module.scss.module.css"],"sourcesContent":[".pageTitle{position:relative;overflow:hidden;isolation:isolate}.pageTitle h1{font-size:calc(.8em + .2vw);font-weight:600;text-transform:uppercase;color:var(--black)}"],"names":[],"mappings":"AAAA;;;;;;AAA+D"}}]
-}

@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/app/user/profile/page.module.scss.module.css"],"sourcesContent":[".page{--gray-rgb: 0, 0, 0;--gray-alpha-200: rgba(var(--gray-rgb), 0.08);--gray-alpha-100: rgba(var(--gray-rgb), 0.05);--button-primary-hover: #383838;--button-secondary-hover: #f2f2f2;height:100%}.pfp img{width:48px;height:48px}@media(prefers-color-scheme: dark){.page{--gray-rgb: 255, 255, 255;--gray-alpha-200: rgba(var(--gray-rgb), 0.145);--gray-alpha-100: rgba(var(--gray-rgb), 0.06);--button-primary-hover: #ccc;--button-secondary-hover: #1a1a1a}}@media(hover: hover)and (pointer: fine){a.primary:hover{background:var(--button-primary-hover);border-color:rgba(0,0,0,0)}}@media(prefers-color-scheme: dark){.logo{filter:invert(100%)}}"],"names":[],"mappings":"AAAA;;;;;;;;;AAAoM;;;;;AAAgC;EAAmC;;;;;;;;;AAA6L;EAAwC;;;;;;AAAmF;EAAmC"}}]
-}
