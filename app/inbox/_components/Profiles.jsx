@@ -214,24 +214,25 @@ const auth = useUpProvider()
 
       {user.length > 0 && user.sort((a, b) => web3.utils.toNumber(b.dt) - web3.utils.toNumber(a.dt)).map((item, i) => {
         return (
-          <div key={i} className={`${styles.item}`}>
-            <div key={i} className={`d-flex flex-row align-items-center justify-content-between`}>
-              <div className={`d-flex flex-row align-items-center justify-content-between`}>
+        
+            <div key={i}  className={`${styles.item} grid grid--fit gap-1 w-100 mt-20`} style={{ '--data-width': `200px` }}>
+              <div className={`${styles.profileContainer} d-flex flex-row align-items-center justify-content-between`}>
                 <a target={`_blank`} href={`https://universaleverything.io/${item.sender}`}>
-                  <div className={`${styles.pfp} d-flex flex-row align-items-center justify-content-between grid--gap-1`}>
+                  <div className={`${styles.pfp} `}>
                     <figure>
                       <img alt={item.fullname} title={item.id} src={item.profileImages.length > 0 && item.profileImages[0].src} className={`rounded`} />
                       <img alt={`♥`} src={`./emoji/${emoji.filter(filterItem => filterItem.emojiId === item.emojiId)[0].emoji}.svg`} />
                     </figure>
-                    <div className={`d-flex flex-column align-items-start justify-content-between grid--gap-025`}>
+                    <div className={``}>
                       <b>{item.name}</b>
                       <small className={`text-secondary`}>{web3.utils.toUtf8(item.message)}</small>
                     </div>
                   </div>
                 </a>
               </div>
-              <div className={`d-flex flex-column align-items-center justify-content-between grid--gap-025`}>
-                <code className={`text-secondary rounded`}>{moment.unix(web3.utils.toNumber(item.dt)).utc().fromNow()}</code>
+
+              <div className={`${styles.priceContainer} d-flex flex-column align-items-end justify-content-between grid--gap-025`}>
+                <p className={`text-center`}><code className={`text-secondary rounded`}>{moment.unix(web3.utils.toNumber(item.dt)).utc().fromNow()}</code></p>
                 
                <div className={`d-flex flex-row align-items-center justify-content-between grid--gap-025`}>
                  <span className={`${styles.price} rounded`} title={new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', currencyDisplay: 'narrowSymbol' }).format(toUsDollar(item.price))}>
@@ -245,7 +246,6 @@ const auth = useUpProvider()
                </div>
               </div>
             </div>
-          </div>
         )
       }
       )}
